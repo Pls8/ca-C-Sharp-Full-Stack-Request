@@ -17,10 +17,7 @@
             //string perfect = (Number[0] >= 0) ? "Number in system" : "Number not found in system";
 
 
-            // any number divied by 2 with no reminder is EVEN number
-            int[] num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-            if (num % 2 == 0) { Console.WriteLine($"Ëven Number {num}") };
-            else { Console.WriteLine($"Odd Number {num}") };
+            
 
 
         }
