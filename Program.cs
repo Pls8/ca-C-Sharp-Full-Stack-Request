@@ -11,7 +11,7 @@
 
             int[] stdGrade = new int[3]; // array size 3 index
             Number[0] = 55555; // assign by INDEX
-            //file-down
+            
             //Condtion
             // v2 ignore
             string perfect = (Number[0] >= 0) ? "Number in system" : "Number not found in system";
