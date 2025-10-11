@@ -15,9 +15,8 @@
             ////Condtion
             //// v2 ignore
             //string perfect = (Number[0] >= 0) ? "Number in system" : "Number not found in system";
-
-
             
+
 
 
         }
