@@ -9,6 +9,9 @@ namespace hw
         static void Main(string[] args)
         {
 
+
+
+
             //________________________________________________________________________________________1
             Console.WriteLine("//Q1 - Write a C# program to print the first 10 even numbers.");            
             //any number divied by 2 with no reminder is EVEN number, python way
@@ -21,6 +24,11 @@ namespace hw
                 }
             }
             Console.WriteLine();
+            //________________________________________________________________________________________1 E N D
+
+
+
+
 
 
             //________________________________________________________________________________________2
@@ -37,6 +45,11 @@ namespace hw
                 Console.WriteLine($"_{i+1} : {num3}");
             }
             Console.WriteLine();
+            //________________________________________________________________________________________2 E N D
+
+
+
+
 
 
             //________________________________________________________________________________________3
@@ -50,6 +63,10 @@ namespace hw
                 Console.WriteLine($"_{i} : {x}");
             }
             Console.WriteLine();
+            //________________________________________________________________________________________3 E N D
+
+
+
 
 
 
@@ -73,6 +90,10 @@ namespace hw
             }
             Console.WriteLine($"The large number by foreach method : {largeNum}");
             Console.WriteLine();
+            //________________________________________________________________________________________4 E N D
+
+
+
 
 
 
@@ -85,6 +106,9 @@ namespace hw
                 Console.WriteLine("********");
             }
             Console.WriteLine();
+            //________________________________________________________________________________________5 E N D
+
+
 
 
 
@@ -118,6 +142,10 @@ namespace hw
                 }
             }
             Console.WriteLine();
+            //________________________________________________________________________________________6 E N D
+
+
+
 
 
 
@@ -149,6 +177,9 @@ namespace hw
             //}
             //Console.WriteLine("Sum of digit " + sumDigit);
             Console.WriteLine();
+            //________________________________________________________________________________________7 E N D
+
+
 
 
 
@@ -170,6 +201,9 @@ namespace hw
             }
             Console.WriteLine("The Reversed String: " + reversStr);
             Console.WriteLine();
+            //________________________________________________________________________________________8 E N D
+
+
 
 
 
@@ -195,6 +229,9 @@ namespace hw
             }
             Console.WriteLine($"Number of Vowels char in {vowStr} is: {vowCount}");
             Console.WriteLine();
+            //________________________________________________________________________________________9 E N D
+
+
 
 
 
@@ -210,6 +247,9 @@ namespace hw
             }
             Console.WriteLine($"The sum of even number {evenNumSum}");
             Console.WriteLine();
+            //________________________________________________________________________________________10 E N D
+
+
 
 
 
@@ -228,6 +268,9 @@ namespace hw
             }
             Console.WriteLine($"Factorial of {numberToBeFact} is: {factNum}");
             Console.WriteLine();
+            //________________________________________________________________________________________11 E N D
+
+
 
 
 
@@ -252,15 +295,18 @@ namespace hw
             //0 to 4 , .Length = 5 but less than < will make it index to 4
             //first forLoop act as postion/pointer
             Console.WriteLine("Without using Array.Sort method");
-            for (int i = 0; i < unSortArry.Length; i++){
+            for (int i = 0; i < unSortArry.Length; i++)
+            {
                 // first ittration 0 minInex is 0 = 4
                 int minIndex = i;
 
                 //second forLoop act as scearch to find small value in array
                 //Is the current element at position j smaller than the one at minIndex?
                 //array[index] will give the value at that index
-                for (int j = i + 1; j < unSortArry.Length; j++){
-                    if (unSortArry[j] < unSortArry[minIndex]){
+                for (int j = i + 1; j < unSortArry.Length; j++)
+                {
+                    if (unSortArry[j] < unSortArry[minIndex])
+                    {
                         // update minIndex condtion of it is a small number
                         minIndex = j;
                     }
@@ -272,6 +318,7 @@ namespace hw
                 unSortArry[i] = temp;
                 Console.WriteLine(temp);
             }
+            //________________________________________________________________________________________12 E N D
 
         }
     }
