@@ -10,7 +10,7 @@ namespace ConsoleApp12_10_2025
     {
         static void Main(string[] args)
         {
-            
+
 
             #region Emp.cs OOP _ class call _ L 4 pt3 
             //////////////////////////////////////////////////////////////////
@@ -21,26 +21,28 @@ namespace ConsoleApp12_10_2025
             //emp.name = "test"; 
 
             Emp[] emp = new Emp[2]; // assing class to array?
-            for (int i = 0; i < emp.Length; i++){
-               emp[i] = new Emp(); //THE MOST IPMORTANT LINE, must emp init first in memory
-               Console.WriteLine("Name ");
-               emp[i].name = Console.ReadLine();
-               Console.WriteLine("ID ");
-               emp[i].empId = int.Parse(Console.ReadLine());
-               Console.WriteLine("Wages ");
-               emp[i].wag = decimal.Parse(Console.ReadLine());
-               Console.WriteLine("hours");
-               emp[i].hrs = double.Parse(Console.ReadLine());
+            for (int i = 0; i < emp.Length; i++)
+            {
+                emp[i] = new Emp(); //THE MOST IPMORTANT LINE, must emp init first in memory
+                Console.WriteLine("Name ");
+                emp[i].name = Console.ReadLine();
+                Console.WriteLine("ID ");
+                emp[i].empId = int.Parse(Console.ReadLine());
+                Console.WriteLine("Wages ");
+                emp[i].wag = decimal.Parse(Console.ReadLine());
+                Console.WriteLine("hours");
+                emp[i].hrs = double.Parse(Console.ReadLine());
 
-               Console.WriteLine($"Your name {emp[i].name} and ID: {emp[i].empId}");
+                Console.WriteLine($"Your name {emp[i].name} and ID: {emp[i].empId}");
             }
 
             //change var to class name Emp it will work
-            foreach (Emp item in emp){
-               //decimal netSalary = (item.wag * (decimal)item.hrs) - (item.wag * (decimal)(item.hrs Emp.taX); // this converation for wages use
-               decimal netSalary = (item.wag * (decimal)item.hrs) - (item.wag * (decimal)(item.hrs * Emp.taX));
-               // Emp.taX; to call constant use class name
-               Console.WriteLine($"Name: {item.name} | ID: {item.empId} | Net Salary: {netSalary}");
+            foreach (Emp item in emp)
+            {
+                //decimal netSalary = (item.wag * (decimal)item.hrs) - (item.wag * (decimal)(item.hrs Emp.taX); // this converation for wages use
+                decimal netSalary = (item.wag * (decimal)item.hrs) - (item.wag * (decimal)(item.hrs * Emp.taX));
+                // Emp.taX; to call constant use class name
+                Console.WriteLine($"Name: {item.name} | ID: {item.empId} | Net Salary: {netSalary}");
             }
 
 
@@ -106,8 +108,8 @@ namespace ConsoleApp12_10_2025
             Console.WriteLine(mulRes);
             static void SumMult(int x, int y, out int S, out int M)
             {
-               S = x + y;
-               M = x * y;
+                S = x + y;
+                M = x * y;
             }
 
             // method signature, same class with diffrent input type or process? 
@@ -115,8 +117,8 @@ namespace ConsoleApp12_10_2025
             // void Print(string name)  
             int x = 2;
             Dep singleLineAndNot = new Dep();
-            Console.WriteLine( singleLineAndNot.SquareSingleLine(x) );
-            Console.WriteLine( singleLineAndNot.SquareAsBlock(x) );
+            Console.WriteLine(singleLineAndNot.SquareSingleLine(x));
+            Console.WriteLine(singleLineAndNot.SquareAsBlock(x));
 
             // const / static is relate to CLASS it self, no need object to call
             // VOID use if no return need
@@ -128,6 +130,61 @@ namespace ConsoleApp12_10_2025
             // ^static is fixed value but can be changed similer to const shared it value to all object in class
 
             #endregion
+
+
+
+
+
+
+
+
+            //________________________________________________________________ OOP Animal Class
+            AnimalClass cat = new CatClass();
+            CatClass cat1 = new CatClass();
+            AnimalClass dog = new DogClass();
+            AnimalClass eagle = new EagleClass();
+            EagleClass duck = new DuckClass();
+            EagleClass falcon = new FalconClass();
+
+
+            Console.WriteLine($"cat: {cat.animalInfo()}");
+            Console.WriteLine($"dog: {dog.animalInfo()}");
+            Console.WriteLine($"egal: {eagle.animalInfo()}");
+            Console.WriteLine($"falcon: {falcon.animalInfo()}");
+            Console.WriteLine($"duck: {duck.animalInfo()}");
+
+
+            //File Structure
+            //... /           
+            //├── Models /
+            //│   ├── AnimalClas.cs
+            //│   ├── CatClass.cs
+            //│   ├── EgleClass.cs
+            //|   ├── FalconClass.cs
+            //│   └── DuckClass.cs
+            //│
+            //└── Program.cs
+
+            //Console.WriteLine($"cat: {cat1.thisCatClass()}");
+            //________________________________________________________________ OOP Animal Class  E N D
+
+
+
+
+
+
+
+
+
+            //_____________________________________________________ Override & Virtual
+            MainVirtualClass mainSub1 = new SubOverrideClass();
+            mainSub1.sayHello();
+
+
+
+
+
+
 
         }
     }
