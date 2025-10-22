@@ -10,7 +10,7 @@ namespace ConsoleApp12_10_2025
     {
         static void Main(string[] args)
         {
-
+                //in class
 
             #region Emp.cs OOP _ class call _ L 4 pt3 
             //////////////////////////////////////////////////////////////////
