@@ -3,6 +3,8 @@
 ```
 .
 └── ca-C-Sharp-Full-Stack-Request/
+    ├── C sharp senario/
+    │   └── Ftiness club(not a fork)
     ├── 12Q Assigment/
     │   ├── Program_12Q.cs 
     │   └── -
@@ -10,48 +12,21 @@
     │   ├── All 8_Q.cs
     │   ├── From Q1 ~ Q8
     │   └── -
-    ├── OOP-2 Assignment/
+    ├── OOP-2 Assignment Day 5/
+    │   ├── Program.cs
+    │   ├── Models/
+    │   │   ├── oop_Q1 to oop_Q8
+    │   │   └── -
+    │   ├── OOP-3 Assignment Day 6/
+    │   │   ├── Program.cs
+    │   │   └── Models/
+    │   │       ├── Q1
+    │   │       ├── Q2
+    │   │       └── -
+    │   ├── OOP_in_classRoom_program
     │   ├── Program.cs
     │   └── Models/
-    │       ├── oop_Q1/
-    │       │   └── BookClass
-    │       ├── oop_Q2/
-    │       │   └── StudentClass
-    │       ├── oop_Q3/
-    │       │   ├── CarClass
-    │       │   ├── TruckClass
-    │       │   └── VehicleClass
-    │       ├── oop_Q4/
-    │       │   ├── OrderClass
-    │       │   └── ProductClass
-    │       ├── oop_Q5/
-    │       │   ├── AnimalClass2
-    │       │   ├── CatClass2
-    │       │   ├── CowClass2
-    │       │   └── DogClass2
-    │       ├── oop_Q6/
-    │       │   └── BankAccountMangment
-    │       ├── oop_Q7/
-    │       │   ├── ControllereClass
-    │       │   ├── IDevice(interface)
-    │       │   ├── LightClass
-    │       │   └── ThermostatClass
-    │       └── oop_Q8/
-    │           ├── DeveloperClass
-    │           ├── EmployeeClass
-    │           ├── HRClass
-    │           └── ManagerClass
-    ├── OOP_in_classRoom_program/
-    │   ├── Program.cs
-    │   └── Models/
-    │       ├── Dep
-    │       ├── Emp
-    │       ├── AnimalClass
-    │       ├── CatClass
-    │       ├── DuckClass
-    │       ├── EagleClass
-    │       ├── FalconClass
-    │       ├── MainVirtualClass
+    │       ├── dependency CS
     │       └── -
     └── LeetCode/
         └── Program.cs
