@@ -6,31 +6,39 @@ using System.Threading.Tasks;
 
 namespace Group_Assigments.Models.project_1
 {
-    public class CustomerClassP1 : DeliveryRequstClass
+    public class CustomerClassP1 // : DeliveryRequstClass
     {
-
-        List<DeliveryRequstClass> deliveryRequstClasses;
-
-        public string isDelevered { get; set; }
-        public CustomerClassP1(string customerName, string driverName, Staus staus, string delver)
-            : base(customerName, driverName, staus)
+        public CustomerClassP1(string namE)
         {
-            this.isDelevered = delver;
+            this.custmerName = namE;
         }
 
-        public override void orderRequst(DeliveryRequstClass n)
-        {
-            deliveryRequstClasses = new List<DeliveryRequstClass>();
-            deliveryRequstClasses.Add(n);
-        }
+        public string custmerName { get; set; }
 
 
 
-        public override void displayInfo()
-        {
-            base.displayInfo();
+        //List<DeliveryRequstClass> deliveryRequstClasses;
 
-        }
+        //public string isDelevered { get; set; }
+        //public CustomerClassP1(string customerName, string driverName, Staus staus, string delver)
+        //    : base(customerName, driverName, staus)
+        //{
+        //    this.isDelevered = delver;
+        //}
+
+        //public override void orderRequst(DeliveryRequstClass n)
+        //{
+        //    deliveryRequstClasses = new List<DeliveryRequstClass>();
+        //    deliveryRequstClasses.Add(n);
+        //}
+
+
+
+        //public override void displayInfo()
+        //{
+        //    base.displayInfo();
+        //    return;
+        //}
 
 
 

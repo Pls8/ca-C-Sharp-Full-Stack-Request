@@ -6,25 +6,33 @@ using System.Threading.Tasks;
 
 namespace Group_Assigments.Models.project_1
 {
-    public abstract class DeliveryRequstClass
+    public class DeliveryRequstClass
     {
-        protected DeliveryRequstClass(string customerName, string driverName, Staus staus)
-        {
-            this.customerName = customerName;
-            this.driverName = driverName;
-            this.staus = staus;
-        }
-
         public string customerName { get; set; }
+        public int orderNumber { get; set; }
         public string driverName { get; set; }
         public Staus staus { get; set; }
 
+        public DeliveryRequstClass(string customerName, string driverName, int orderNumber, Staus staus)
+        {
+            this.customerName = customerName;
+            this.driverName = driverName;
+            this.orderNumber = orderNumber;
+            this.staus = staus;
+        }
+
+        
 
 
-        public virtual void orderRequst(DeliveryRequstClass n) { }
 
+        //public virtual void orderRequst(DeliveryRequstClass n) { }
 
-        public virtual void displayInfo() {
+        public void changeDevStaus(Staus s) { 
+            staus = s;
+            Console.WriteLine($"{customerName} {staus}");
+        }
+
+        public void displayInfo() {
             Console.WriteLine($"Order details {this.customerName}" +
                 $"| {this.driverName} | {this.staus}");
         }

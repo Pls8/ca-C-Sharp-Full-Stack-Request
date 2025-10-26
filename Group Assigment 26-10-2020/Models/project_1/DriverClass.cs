@@ -6,15 +6,55 @@ using System.Threading.Tasks;
 
 namespace Group_Assigments.Models.project_1
 {
-    public class DriverClass : DeliveryRequstClass
+    public class DriverClass // : DeliveryRequstClass
     {
-        //public string driverName { get; set; }
-        public int shipNumber { get; set; }
-        //public string custmerName { get; set; }
-        public DriverClass(string customerName, string driverName, Staus staus, int shipNum)
-            : base(customerName, driverName, staus)
+
+        public string driverName { get; set; }
+        public List<DeliveryRequstClass> Deliveries { get; set; }
+
+        public DriverClass(string driverName)
         {
-            this.shipNumber = shipNum;
+            this.driverName = driverName;
+            Deliveries = new List<DeliveryRequstClass>();
         }
+
+
+
+        public void addDelivry(DeliveryRequstClass req)
+        {
+            Deliveries.Add(req);
+        }
+
+
+        public void changeOrderStaus(int orderNum, Staus newSt)
+        {
+            foreach (var delviry in Deliveries)
+            {
+                if (delviry.orderNumber == orderNum)
+                {
+                    delviry.staus = newSt;
+                    Console.WriteLine($"Order: {delviry.orderNumber} | status change to {newSt}");
+                }
+            }
+        }
+
+        public void showAllOrder() {
+            Console.WriteLine($"driver: [{driverName}] order: ");
+            foreach (var delviry in Deliveries)
+            {
+                Console.WriteLine($"order number: {delviry.orderNumber} | " +
+                    $"name: [{delviry.customerName}] | [{delviry.staus}]");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
