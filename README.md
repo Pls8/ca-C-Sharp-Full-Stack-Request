@@ -3,30 +3,30 @@
 ```
 .
 └── ca-C-Sharp-Full-Stack-Request/
+    ├── Group Assigment 26-10-2020/
+    │   ├── Program.cs (call)
+    │   ├── Models/
+    │   │   ├── project_1
+    │   │   └── project_2
+    │   └── -
     ├── C sharp senario/
-    │   └── Ftiness club(not a fork)
+    │   ├── Ftiness club(not a fork)
+    │   └── -
     ├── 12Q Assigment/
     │   ├── Program_12Q.cs 
     │   └── -
     ├── 8Q Assigment/
-    │   ├── All 8_Q.cs
-    │   ├── From Q1 ~ Q8
+    │   ├── 8_Q.cs (all in one file)
+    │   ├── Q1 ~ Q8 (Separate files)
     │   └── -
-    ├── OOP-2 Assignment Day 5/
-    │   ├── Program.cs
-    │   ├── Models/
-    │   │   ├── oop_Q1 to oop_Q8
-    │   │   └── -
-    │   ├── OOP-3 Assignment Day 6/
-    │   │   ├── Program.cs
-    │   │   └── Models/
-    │   │       ├── Q1
-    │   │       ├── Q2
-    │   │       └── -
-    │   ├── OOP_in_classRoom_program
-    │   ├── Program.cs
+    ├── OOP-2 Assignment/
+    │   ├── Program.cs (call)
+    │   └── Models/
+    │       └── oop_Q1 ~ oop_Q8 (Separate files)
+    ├── OOP_in_classRoom_program/
+    │   ├── Program.cs (call)
     │   └── Models/
     │       ├── dependency CS
     │       └── -
     └── LeetCode/
-        └── Program.cs
+        └── Program.cs (roman to integer)
