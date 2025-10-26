@@ -8,6 +8,23 @@ namespace Group_Assigments.Models.project_2
 {
     public class BookClass
     {
-        public string bookName { get; set; }
+        public BookClass(string bookTitle, Bookstatus bookstatus)
+        {
+            this.bookTitle = bookTitle;
+            this.bookstatus = bookstatus;
+        }
+
+        public string bookTitle { get; set; }
+        public Bookstatus bookstatus { get; set; }
+
+
+        public void bookDisplay() {
+            string isAvlblBarrow = bookstatus == Bookstatus.available ? "avalibel": "borrowed";
+            Console.WriteLine($"{bookTitle} | {isAvlblBarrow}");
+        }
+
+
+
+
     }
 }

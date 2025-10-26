@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Group_Assigments.Models.project_2
 {
-    public enum menu { 
+    public enum Menu { 
         coffe, 
         tea
+    }
+
+    public enum Bookstatus { 
+        available,
+        borrowed
     }
 }
