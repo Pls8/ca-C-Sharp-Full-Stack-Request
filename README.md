@@ -18,9 +18,7 @@
     │   └── -
     ├── Group Assigment 4Q _26-10-2020/
     │   ├── Program.cs (call)
-    │   ├── Models/
-    │   │   ├── project_1
-    │   │   └── project_2
+    │   ├── project(1, 2, 3, 4)
     │   └── -
     ├── OOP-2 Assignment/
     │   ├── Program.cs (call)
