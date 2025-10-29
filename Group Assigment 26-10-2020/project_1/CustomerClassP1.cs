@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group_Assigments.Models.project_1
+namespace Group_Assigments.project_1
 {
     public class CustomerClassP1 // : DeliveryRequstClass
     {
         public CustomerClassP1(string namE)
         {
-            this.custmerName = namE;
+            custmerName = namE;
         }
 
         public string custmerName { get; set; }
@@ -31,8 +31,6 @@ namespace Group_Assigments.Models.project_1
         //    deliveryRequstClasses = new List<DeliveryRequstClass>();
         //    deliveryRequstClasses.Add(n);
         //}
-
-
 
         //public override void displayInfo()
         //{

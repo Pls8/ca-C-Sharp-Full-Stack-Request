@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group_Assigments.Models.project_1
+namespace Group_Assigments.project_3
 {
-    public enum Staus { 
-        pending,
-        onTheWay,
-        Delivered
+    public enum CarStatus { 
+        available, rented
     }
 }
