@@ -16,7 +16,7 @@
     ├── LeetCode/
     │   ├── Program.cs (roman to integer)
     │   └── -
-    ├── Group Assigment 4Q _26-10-2020/
+    ├── Grouop Assigments 26-Oct/
     │   ├── Program.cs (call)
     │   ├── project(1, 2, 3, 4)
     │   └── -
