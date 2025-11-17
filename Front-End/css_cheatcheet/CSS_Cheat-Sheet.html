@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet - Clean Copy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #050018;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 70%;
+            margin: 0 auto;
+            background: rgb(3, 0, 34);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(87, 0, 0, 0.459);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h2 {
+            color: #ffffff;
+            margin: 25px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h3 {
+            color: #d3d3d3;
+            margin: 20px 0 10px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #001122;
+            border-radius: 8px;
+            border: 1px solid #790000;
+        }
+        
+        .code-block {
+            background: #001122;
+            border: 1px solid #0021dd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 17px;
+            white-space: pre-wrap;
+            color: #d1d1d1;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background: #fff3cd00;
+            border: 1px solid #0021dd;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #ff0000;
+            font-style: italic;
+        }
+        
+        .copy-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #e8f4fc;
+            border-radius: 8px;
+        }
+        
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .example {
+            background: #e8f5e8;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Cheat Sheet</h1>
+
+        <!-- 1. Three Ways to Apply CSS -->
+        <div class="section">
+            <h2>1. Three Ways to Apply CSS</h2>
+            
+            <h3>النمط المضمن</h3>
+            <div class="code-block">&lt;p style="color: red; font-size: 16px;"&gt;This is red text&lt;/p&gt;</div>
+            
+            <h3>Internal Style</h3>
+            <div class="code-block">&lt;style&gt;
+    p {
+        color: blue;
+        font-size: 18px;
+    }
+&lt;/style&gt;</div>
+            
+            <h3>External Style</h3>
+            <div class="code-block">&lt;link rel="stylesheet" href="styles.css"&gt;</div>
+            <div class="code-block">p {
+    color: green;
+    font-size: 20px;
+}</div>
+        </div>
+
+        <!-- 2. CSS Selectors -->
+        <div class="section">
+            <h2>2. CSS Selectors</h2>
+            <div class="code-block">#idName { }          /* Select by ID (unique) */
+.className { }       /* Select by class (multiple) */
+p { }                /* Select by tag name */
+div.className { }    /* Element with specific class */</div>
+        </div>
+
+        <!-- 3. CSS Comments -->
+        <div class="section">
+            <h2>3. CSS Comments</h2>
+            <div class="code-block">/* This is a single-line comment */
+
+/*
+ This is a
+ multi-line comment
+*/</div>
+        </div>
+
+        <!-- 4. CSS Colors -->
+        <div class="section">
+            <h2>4. CSS Colors</h2>
+            <div class="code-block">color: red;                    /* Named color */
+color: #ff0000;               /* HEX color */
+color: rgb(255, 0, 0);        /* RGB color */
+color: rgba(255, 0, 0, 0.5);  /* RGB with opacity */
+color: hsl(0, 100%, 50%);     /* HSL color */</div>
+        </div>
+
+        <!-- 5. CSS Font -->
+        <div class="section">
+            <h2>5. CSS Font Properties</h2>
+            <div class="code-block">font-family: Arial, sans-serif;
+font-size: 16px;
+font-weight: bold;    /* normal, bold, 100-900 */
+font-style: italic;   /* normal, italic */
+line-height: 1.5;</div>
+        </div>
+
+        <!-- 6. Google Font Import -->
+        <div class="section">
+            <h2>6. Google Font Import</h2>
+            <div class="code-block">&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;</div>
+            <div class="code-block">font-family: 'Roboto', sans-serif;</div>
+        </div>
+
+        <!-- 7. CSS Text Properties -->
+        <div class="section">
+            <h2>7. CSS Text Properties</h2>
+            <div class="code-block">text-align: center;      /* left, right, center, justify */
+text-decoration: underline; /* none, underline, line-through */
+text-transform: uppercase;  /* lowercase, uppercase, capitalize */
+line-height: 1.5;
+letter-spacing: 2px;
+text-indent: 20px;</div>
+        </div>
+
+        <!-- 8. CSS Units -->
+        <div class="section">
+            <h2>8. CSS Units</h2>
+            
+            <h3>Absolute Lengths (Fixed)</h3>
+            <div class="code-block">px - pixels
+cm - centimeters
+mm - millimeters
+in - inches</div>
+            
+            <h3>Relative Lengths (Better for responsiveness)</h3>
+            <div class="code-block">%  - percentage of parent
+em - relative to font-size
+rem - relative to root font-size
+vw - 1% of viewport width
+vh - 1% of viewport height</div>
+            
+            <div class="note">Better to use: Relative units for responsive design</div>
+        </div>
+
+        <!-- 9. Width, Height & Overflow -->
+        <div class="section">
+            <h2>9. Width, Height & Overflow</h2>
+            <div class="code-block">width: 100%;           /* Percentage of parent */
+height: 50vh;          /* 50% of viewport height */
+width: auto;           /* Browser calculates */
+
+/* Overflow handles content that doesn't fit */
+overflow: visible;     /* Default */
+overflow: hidden;      /* Hide extra content */
+overflow: scroll;      /* Add scrollbars */
+overflow: auto;        /* Scrollbars when needed */</div>
+        </div>
+
+        <!-- 10. Background Properties -->
+        <div class="section">
+            <h2>10. Background Properties</h2>
+            <div class="code-block">background-color: #ffffff;
+background-image: url('image.jpg');
+background-size: cover;        /* cover, contain, specific size */
+background-repeat: no-repeat;  /* repeat, no-repeat */
+background-position: center;   /* top, bottom, left, right, center */
+background-attachment: fixed;  /* scroll, fixed */
+
+/* Shorthand */
+background: #fff url('image.jpg') no-repeat center/cover fixed;</div>
+        </div>
+
+        <!-- 11. Background Gradient -->
+        <div class="section">
+            <h2>11. Background Gradient</h2>
+            <div class="code-block">/* Linear Gradient */
+background: linear-gradient(to right, red, blue);
+
+/* Radial Gradient */
+background: radial-gradient(circle, red, yellow, green);
+
+/* Multiple color stops */
+background: linear-gradient(45deg, red, orange, yellow);</div>
+        </div>
+
+        <!-- 12. CSS Display -->
+        <div class="section">
+            <h2>12. CSS Display</h2>
+            <div class="code-block">display: block;        /* Full width, new line (div, p) */
+display: inline;       /* Only needed width (span, a) */
+display: inline-block; /* Inline but can have width/height */
+display: none;         /* Completely removed */
+display: flex;         /* Flexbox layout */</div>
+        </div>
+
+        <!-- 13. Browser Inspect -->
+        <div class="section">
+            <h2>13. Browser Inspect Tool</h2>
+            <div class="code-block">Right-click → "Inspect" or Press F12
+- View and edit CSS in real-time
+- Debug layout issues
+- Test responsive designs
+- Check computed styles</div>
+        </div>
+
+        <!-- 14. calc() Method -->
+        <div class="section">
+            <h2>14. calc() Method</h2>
+            <div class="code-block">/* Performs calculations for values */
+width: calc(100% - 50px);
+height: calc(50vh + 2rem);
+margin: calc(2 * 10px);
+font-size: calc(16px + 0.5vw);</div>
+        </div>
+
+        <!-- 15. Border and Outline -->
+        <div class="section">
+            <h2>15. Border and Outline</h2>
+            <div class="code-block">border: 2px solid red;        /* width style color */
+border-radius: 10px;          /* Rounded corners */
+border-bottom: 1px dotted blue; /* Bottom border only */
+border-top-right-radius: 5px; /* Specific corner */
+
+outline: 2px dashed green;    /* Outside border */
+outline-offset: 5px;          /* Space between border and outline */</div>
+        </div>
+
+        <!-- 16. Box Model -->
+        <div class="section">
+            <h2>16. Box Model</h2>
+            <div class="code-block">/* From inside to outside: */
+Content → Padding → Border → Margin
+
+div {
+    width: 200px;           /* Content width */
+    padding: 20px;          /* Space inside border */
+    border: 2px solid black;/* Border around padding */
+    margin: 10px;           /* Space outside border */
+}</div>
+        </div>
+
+        <!-- 17. box-sizing -->
+        <div class="section">
+            <h2>17. box-sizing Property</h2>
+            <div class="code-block">/* Default - width/height = content only */
+box-sizing: content-box;
+
+/* Better - width/height includes padding & border */
+box-sizing: border-box;</div>
+            <div class="note">Use: * { box-sizing: border-box; } for better layout control</div>
+        </div>
+
+        <!-- 18. Pseudo-elements -->
+        <div class="section">
+            <h2>18. Pseudo-elements</h2>
+            <div class="code-block">/* Add content before element */
+::before {
+    content: "→ ";
+    color: red;
+}
+
+/* Add content after element */
+::after {
+    content: "!";
+    font-weight: bold;
+}
+
+/* Style first line of text */
+::first-line {
+    font-weight: bold;
+}
+
+/* Style first letter */
+::first-letter {
+    font-size: 2em;
+    color: red;
+}</div>
+        </div>
+
+        <!-- 19. Animation & Keyframes -->
+        <div class="section">
+            <h2>19. Animation & Keyframes</h2>
+            <div class="code-block">/* Define animation */
+@keyframes example {
+    0% { 
+        background-color: red; 
+        transform: translateX(0); 
+    }
+    50% { 
+        background-color: yellow; 
+        transform: translateX(100px); 
+    }
+    100% { 
+        background-color: green; 
+        transform: translateX(0); 
+    }
+}
+
+/* Apply animation */
+div {
+    animation: example 3s ease-in-out infinite;
+}</div>
+        </div>
+
+        <!-- 20. Transition -->
+        <div class="section">
+            <h2>20. Transition</h2>
+            <div class="code-block">transition: property duration timing-function delay;
+
+/* Examples */
+transition: all 0.3s ease-in-out;
+transition: background-color 0.5s linear 0.2s;
+
+/* Timing functions */
+linear:      Constant speed
+ease-in:     Slow start
+ease-out:    Slow end
+ease-in-out: Slow start and end</div>
+        </div>
+
+        <!-- 21. Font Awesome Icons -->
+        <div class="section">
+            <h2>21. Font Awesome Icons</h2>
+            <div class="code-block">&lt;!-- Include Font Awesome --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;
+
+&lt;!-- Use icons --&gt;
+&lt;i class="fas fa-heart"&gt;&lt;/i&gt;      Solid style
+&lt;i class="far fa-heart"&gt;&lt;/i&gt;      Regular style
+&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;    Brands style</div>
+        </div>
+
+        <!-- 22. Media Queries -->
+        <div class="section">
+            <h2>22. Media Queries</h2>
+            <div class="code-block">/* For screens */
+@media screen and (max-width: 768px) {
+    body { background: lightblue; }
+}
+
+/* For printing */
+@media print {
+    .no-print { display: none; }
+}
+
+/* Common breakpoints */
+@media (max-width: 768px) { /* Tablets */ }
+@media (max-width: 480px) { /* Phones */ }
+
+/* Orientation */
+@media (orientation: landscape) { }
+@media (orientation: portrait) { }</div>
+        </div>
+
+        
+    
+</body>
+</html>

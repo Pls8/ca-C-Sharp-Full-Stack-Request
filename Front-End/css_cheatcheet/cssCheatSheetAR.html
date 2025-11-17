@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل CSS الشامل - CSS Cheat Sheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #060014 0%, #1a0033 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(3, 0, 20, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(120, 0, 200, 0.3);
+            border: 1px solid #2a0066;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #090016 0%, #170038 100%);
+            color: white;
+            border-radius: 12px;
+            border: 1px solid #6a00ff;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        h2 {
+            color: #ffffff;
+            margin: 35px 0 20px;
+            padding: 15px;
+            background: linear-gradient(90deg, #2a0066, transparent);
+            border-right: 5px solid #6a00ff;
+            border-radius: 8px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #b38fff;
+            margin: 25px 0 15px;
+            padding: 10px 15px;
+            background: rgba(42, 0, 102, 0.3);
+            border-right: 3px solid #8c52ff;
+            border-radius: 5px;
+            font-size: 1.4rem;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(10, 0, 40, 0.7);
+            border-radius: 12px;
+            border: 1px solid #3a0080;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            border-color: #6a00ff;
+        }
+        
+        .code-block {
+            background: #0a001f;
+            border: 2px solid #4a00b3;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 16px;
+            white-space: pre-wrap;
+            color: #e0e0e0;
+            overflow-x: auto;
+            line-height: 1.6;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .explanation {
+            background: rgba(26, 0, 80, 0.5);
+            border: 1px solid #5a00cc;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: #d0d0ff;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .note {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ff0000;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: #ff3300;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .copy-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(42, 0, 102, 0.5);
+            border-radius: 12px;
+            border: 1px solid #6a00ff;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #6a00ff 0%, #8c52ff 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(106, 0, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #8c52ff 0%, #6a00ff 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(106, 0, 255, 0.5);
+        }
+        
+        .property-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .property-item {
+            background: rgba(30, 0, 70, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #5a00cc;
+        }
+        
+        .keyword {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+        
+        .selector {
+            color: #569cd6;
+        }
+        
+        .property {
+            color: #9cdcfe;
+        }
+        
+        .value {
+            color: #ce9178;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> دليل CSS الشامل</h1>
+        </header>
+
+        <!-- 1. Three Ways to Apply CSS -->
+        <div class="section">
+            <h2>١. ثلاث طرق لتطبيق CSS</h2>
+            
+            <div class="explanation">
+                CSS يمكن تطبيقه بثلاث طرق مختلفة، لكل منها استخداماته الخاصة ومستويات الأولوية.
+            </div>
+            
+            <h3>النمط المضمن (Inline Style)</h3>
+            <div class="explanation">
+                يتم تطبيق النمط مباشرة على العنصر باستخدام سمة style. له أعلى أولوية ولكن لا ينصح باستخدامه بكثرة.
+            </div>
+            <div class="code-block"><span class="selector">&lt;p</span> <span class="property">style</span>=<span class="value">"color: red; font-size: 16px;"</span><span class="selector">&gt;</span>هذا نص أحمر<span class="selector">&lt;/p&gt;</span></div>
+            
+            <h3>النمط الداخلي (Internal Style)</h3>
+            <div class="explanation">
+                يتم وضع CSS داخل وسم &lt;style&gt; في رأس HTML. ينطبق على المستند بأكمله.
+            </div>
+            <div class="code-block"><span class="selector">&lt;style&gt;</span>
+    <span class="selector">p</span> {
+        <span class="property">color</span>: <span class="value">blue</span>;
+        <span class="property">font-size</span>: <span class="value">18px</span>;
+    }
+<span class="selector">&lt;/style&gt;</span></div>
+            
+            <h3>النمط الخارجي (External Style)</h3>
+            <div class="explanation">
+                يتم وضع CSS في ملف منفصل ثم ربطه بـ HTML. هذه أفضل ممارسة للمشاريع الكبيرة.
+            </div>
+            <div class="code-block"><span class="selector">&lt;link</span> <span class="property">rel</span>=<span class="value">"stylesheet"</span> <span class="property">href</span>=<span class="value">"styles.css"</span><span class="selector">&gt;</span></div>
+            <div class="code-block"><span class="comment">/* في ملف styles.css */</span>
+<span class="selector">p</span> {
+    <span class="property">color</span>: <span class="value">green</span>;
+    <span class="property">font-size</span>: <span class="value">20px</span>;
+}</div>
+        </div>
+
+        <!-- 2. CSS Selectors -->
+        <div class="section">
+            <h2>٢. محددات CSS (Selectors)</h2>
+            
+            <div class="explanation">
+                المحددات تستخدم لتحديد العناصر التي تريد تطبيق الأنماط عليها. هناك عدة أنواع من المحددات:
+            </div>
+            
+            <div class="property-list">
+                <div class="property-item">
+                    <span class="selector">#idName</span> { }<br>
+                    <span class="comment">/* تحديد عنصر بواسطة المعرف (فريد) */</span>
+                </div>
+                <div class="property-item">
+                    <span class="selector">.className</span> { }<br>
+                    <span class="comment">/* تحديد عناصر بواسطة الفئة (متعددة) */</span>
+                </div>
+                <div class="property-item">
+                    <span class="selector">p</span> { }<br>
+                    <span class="comment">/* تحديد جميع عناصر النوع */</span>
+                </div>
+                <div class="property-item">
+                    <span class="selector">div.className</span> { }<br>
+                    <span class="comment">/* عنصر مع فئة محددة */</span>
+                </div>
+            </div>
+            
+            <div class="code-block"><span class="comment">/* أمثلة متقدمة على المحددات */</span>
+<span class="selector">div p</span> { }          <span class="comment">/* جميع عناصر p داخل div */</span>
+<span class="selector">div &gt; p</span> { }        <span class="comment">/* عناصر p المباشرة داخل div */</span>
+<span class="selector">p:hover</span> { }        <span class="comment">/* عند تمرير الماوس فوق p */</span>
+<span class="selector">p:first-child</span> { } <span class="comment">/* أول عنصر p */</span></div>
+        </div>
+
+        <!-- 3. CSS Comments -->
+        <div class="section">
+            <h2>٣. التعليقات في CSS</h2>
+            
+            <div class="explanation">
+                التعليقات تستخدم لإضافة ملاحظات وشرح للكود دون التأثير على التصميم.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* هذا تعليق من سطر واحد */</span>
+
+<span class="comment">/*
+ هذا تعليق
+ متعدد الأسطر
+*/</span>
+
+<span class="selector">p</span> {
+    <span class="property">color</span>: <span class="value">red</span>;    <span class="comment">/* تعليق بجانب الخاصية */</span>
+}</div>
+        </div>
+
+        <!-- 4. CSS Colors -->
+        <div class="section">
+            <h2>٤. الألوان في CSS</h2>
+            
+            <div class="explanation">
+                يمكن تحديد الألوان في CSS بعدة طرق مختلفة:
+            </div>
+            
+            <div class="property-list">
+                <div class="property-item">
+                    <span class="property">color</span>: <span class="value">red</span>;<br>
+                    <span class="comment">/* أسماء الألوان */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">color</span>: <span class="value">#ff0000</span>;<br>
+                    <span class="comment">/* نظام HEX */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">color</span>: <span class="value">rgb(255, 0, 0)</span>;<br>
+                    <span class="comment">/* نظام RGB */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">color</span>: <span class="value">rgba(255, 0, 0, 0.5)</span>;<br>
+                    <span class="comment">/* RGB مع الشفافية */</span>
+                </div>
+            </div>
+            
+            <div class="note">
+                 نصيحة: استخدم نظام HEX أو RGB للألوان للحصول على تحكم دقيق.
+            </div>
+        </div>
+
+        <!-- 5. CSS Font -->
+        <div class="section">
+            <h2>٥. خصائص الخطوط</h2>
+            
+            <div class="explanation">
+                خصائص الخطوط تتحكم في مظهر النص وحجمه ونوعه.
+            </div>
+            
+            <div class="code-block"><span class="selector">p</span> {
+    <span class="property">font-family</span>: <span class="value">Arial, sans-serif</span>;  <span class="comment">/* نوع الخط */</span>
+    <span class="property">font-size</span>: <span class="value">16px</span>;                 <span class="comment">/* حجم الخط */</span>
+    <span class="property">font-weight</span>: <span class="value">bold</span>;              <span class="comment">/* سماكة الخط */</span>
+    <span class="property">font-style</span>: <span class="value">italic</span>;             <span class="comment">/* نمط الخط */</span>
+    <span class="property">line-height</span>: <span class="value">1.5</span>;                <span class="comment">/* ارتفاع السطر */</span>
+    <span class="property">text-transform</span>: <span class="value">uppercase</span>;       <span class="comment">/* تحويل النص */</span>
+}</div>
+        </div>
+
+        <!-- 6. Google Font Import -->
+        <div class="section">
+            <h2>٦. استيراد خطوط جوجل</h2>
+            
+            <div class="explanation">
+                يمكن استيراد خطوط من Google Fonts لاستخدامها في موقعك.
+            </div>
+            
+            <div class="code-block"><span class="comment">&lt;!-- في رأس HTML --&gt;</span>
+<span class="selector">&lt;link</span> <span class="property">href</span>=<span class="value">"https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&amp;display=swap"</span> <span class="property">rel</span>=<span class="value">"stylesheet"</span><span class="selector">&gt;</span></div>
+            
+            <div class="code-block"><span class="comment">/* في CSS */</span>
+<span class="selector">body</span> {
+    <span class="property">font-family</span>: <span class="value">'Tajawal', sans-serif</span>;
+}</div>
+            
+            <div class="note">
+                 يمكنك استكشاف المزيد من الخطوط على <a href="https://fonts.google.com" style="color: #8c52ff;">Google Fonts</a>
+            </div>
+        </div>
+
+        <!-- 7. CSS Text Properties -->
+        <div class="section">
+            <h2>٧. خصائص النص</h2>
+            
+            <div class="explanation">
+                خصائص النص تتحكم في تنسيق ومظهر النصوص.
+            </div>
+            
+            <div class="code-block"><span class="selector">p</span> {
+    <span class="property">text-align</span>: <span class="value">center</span>;        <span class="comment">/* محاذاة النص */</span>
+    <span class="property">text-decoration</span>: <span class="value">underline</span>; <span class="comment">/* تزيين النص */</span>
+    <span class="property">text-transform</span>: <span class="value">uppercase</span>;   <span class="comment">/* تحويل حالة النص */</span>
+    <span class="property">line-height</span>: <span class="value">1.6</span>;            <span class="comment">/* ارتفاع السطر */</span>
+    <span class="property">letter-spacing</span>: <span class="value">2px</span>;         <span class="comment">/* تباعد الحروف */</span>
+    <span class="property">word-spacing</span>: <span class="value">5px</span>;           <span class="comment">/* تباعد الكلمات */</span>
+    <span class="property">text-indent</span>: <span class="value">20px</span>;          <span class="comment">/* مسافة بادئة */</span>
+    <span class="property">direction</span>: <span class="value">rtl</span>;             <span class="comment">/* اتجاه النص */</span>
+}</div>
+        </div>
+
+        <!-- 8. CSS Units -->
+        <div class="section">
+            <h2>٨. وحدات القياس في CSS</h2>
+            
+            <div class="explanation">
+                هناك نوعان رئيسيان من وحدات القياس: مطلقة ونسبية.
+            </div>
+            
+            <h3>الوحدات المطلقة (ثابتة)</h3>
+            <div class="code-block"><span class="value">px</span>  <span class="comment">/* بكسل */</span>
+<span class="value">cm</span>  <span class="comment">/* سنتيمتر */</span>
+<span class="value">mm</span>  <span class="comment">/* مليمتر */</span>
+<span class="value">in</span>  <span class="comment">/* بوصة */</span>
+<span class="value">pt</span>  <span class="comment">/* نقطة */</span></div>
+            
+            <h3>الوحدات النسبية (أفضل للاستجابة)</h3>
+            <div class="code-block"><span class="value">%</span>   <span class="comment">/* نسبة مئوية من العنصر الأب */</span>
+<span class="value">em</span>  <span class="comment">/* نسبة من حجم خط العنصر */</span>
+<span class="value">rem</span> <span class="comment">/* نسبة من حجم خط العنصر الجذر */</span>
+<span class="value">vw</span>  <span class="comment">/* 1% من عرض viewport */</span>
+<span class="value">vh</span>  <span class="comment">/* 1% من ارتفاع viewport */</span>
+<span class="value">vmin</span> <span class="comment">/* 1% من أصغر بُعد */</span>
+<span class="value">vmax</span> <span class="comment">/* 1% من أكبر بُعد */</span></div>
+            
+            <div class="note">
+                 الأفضل استخدام: الوحدات النسبية مثل rem و vw لتصميم متجاوب.
+            </div>
+        </div>
+
+        <!-- 9. Width, Height & Overflow -->
+        <div class="section">
+            <h2>٩. العرض، الارتفاع والتجاوز</h2>
+            
+            <div class="explanation">
+                تتحكم هذه الخصائص في أبعاد العناصر وكيفية تعاملها مع المحتوى الزائد.
+            </div>
+            
+            <div class="code-block"><span class="selector">.container</span> {
+    <span class="property">width</span>: <span class="value">100%</span>;           <span class="comment">/* نسبة من العنصر الأب */</span>
+    <span class="property">height</span>: <span class="value">50vh</span>;          <span class="comment">/* 50% من ارتفاع النافذة */</span>
+    <span class="property">min-width</span>: <span class="value">300px</span>;       <span class="comment">/* أقل عرض مسموح */</span>
+    <span class="property">max-width</span>: <span class="value">1200px</span>;      <span class="comment">/* أكبر عرض مسموح */</span>
+    
+    <span class="comment">/* التعامل مع المحتوى الزائد */</span>
+    <span class="property">overflow</span>: <span class="value">visible</span>;     <span class="comment">/* إظهار المحتوى الزائد */</span>
+    <span class="property">overflow</span>: <span class="value">hidden</span>;      <span class="comment">/* إخفاء المحتوى الزائد */</span>
+    <span class="property">overflow</span>: <span class="value">scroll</span>;      <span class="comment">/* إضافة أشرطة التمرير */</span>
+    <span class="property">overflow</span>: <span class="value">auto</span>;        <span class="comment">/* أشرطة تمرير عند الحاجة */</span>
+}</div>
+        </div>
+
+        <!-- 10. Background Properties -->
+        <div class="section">
+            <h2>١٠. خصائص الخلفية</h2>
+            
+            <div class="explanation">
+                خصائص الخلفية تتحكم في مظهر خلفية العناصر.
+            </div>
+            
+            <div class="code-block"><span class="selector">div</span> {
+    <span class="property">background-color</span>: <span class="value">#ffffff</span>;
+    <span class="property">background-image</span>: <span class="value">url('image.jpg')</span>;
+    <span class="property">background-size</span>: <span class="value">cover</span>;        <span class="comment">/* cover, contain, أو قيم محددة */</span>
+    <span class="property">background-repeat</span>: <span class="value">no-repeat</span>;  <span class="comment">/* repeat, no-repeat, repeat-x, repeat-y */</span>
+    <span class="property">background-position</span>: <span class="value">center</span>;   <span class="comment">/* top, bottom, left, right, center */</span>
+    <span class="property">background-attachment</span>: <span class="value">fixed</span>;  <span class="comment">/* scroll, fixed */</span>
+    
+    <span class="comment">/* الاختصار */</span>
+    <span class="property">background</span>: <span class="value">#fff url('image.jpg') no-repeat center/cover fixed</span>;
+}</div>
+        </div>
+
+        <!-- 11. Background Gradient -->
+        <div class="section">
+            <h2>١١. التدرجات اللونية</h2>
+            
+            <div class="explanation">
+                التدرجات اللونية تسمح بإنشاء خلفيات متعددة الألوان بشكل سلس.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* تدرج خطي */</span>
+<span class="property">background</span>: <span class="value">linear-gradient(to right, red, blue)</span>;
+
+<span class="comment">/* تدرج دائري */</span>
+<span class="property">background</span>: <span class="value">radial-gradient(circle, red, yellow, green)</span>;
+
+<span class="comment">/* تدرج بزاوية */</span>
+<span class="property">background</span>: <span class="value">linear-gradient(45deg, red, orange, yellow)</span>;
+
+<span class="comment">/* تدرج متكرر */</span>
+<span class="property">background</span>: <span class="value">repeating-linear-gradient(45deg, red, red 10px, blue 10px, blue 20px)</span>;</div>
+        </div>
+
+        <!-- 12. CSS Display -->
+        <div class="section">
+            <h2>١٢. خاصية العرض (Display)</h2>
+            
+            <div class="explanation">
+                خاصية display تتحكم في كيفية عرض العنصر وتخطيطه.
+            </div>
+            
+            <div class="property-list">
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">block</span>;<br>
+                    <span class="comment">/* يأخذ العرض كامل ويبدأ سطر جديد */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">inline</span>;<br>
+                    <span class="comment">/* يأخذ المساحة اللازمة فقط */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">inline-block</span>;<br>
+                    <span class="comment">/* مثل inline لكن يمكن تحديد أبعاد */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">none</span>;<br>
+                    <span class="comment">/* إخفاء العنصر completamente */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">flex</span>;<br>
+                    <span class="comment">/* تخطيط flexbox */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">display</span>: <span class="value">grid</span>;<br>
+                    <span class="comment">/* تخطيط grid */</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. Browser Inspect -->
+        <div class="section">
+            <h2>١٣. أدوات المطور (Developer Tools)</h2>
+            
+            <div class="explanation">
+                أدوات المطور في المتصفح تسمح لك بفحص وتعديل CSS في الوقت الحقيقي.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* كيفية الوصول للأدوات */</span>
+- انقر بزر الماوس الأيمن → "فحص" (Inspect)
+- أو اضغط F12
+- أو Ctrl+Shift+I (Windows/Linux)
+- أو Cmd+Opt+I (Mac)
+
+<span class="comment">/* الميزات المتاحة */</span>
+- عرض وتحرير CSS مباشرة
+- تصحيح مشاكل التخطيط
+- اختبار التصميم المتجاوب
+- فحص الأنماط المحسوبة
+- محاكاة الأجهزة المختلفة</div>
+            
+            <div class="note">
+                 هذه الأدوات ضرورية لأي مطور ويب وتوفر وقتًا كبيرًا في التصحيح.
+            </div>
+        </div>
+
+        <!-- 14. calc() Method -->
+        <div class="section">
+            <h2>١٤. دالة calc()</h2>
+            
+            <div class="explanation">
+                دالة calc() تسمح بإجراء حسابات رياضية للقيم في CSS، ويمكنها دمج وحدات قياس مختلفة.
+            </div>
+            
+            <div class="code-block"><span class="selector">.element</span> {
+    <span class="property">width</span>: <span class="value">calc(100% - 50px)</span>;
+    <span class="property">height</span>: <span class="value">calc(50vh + 2rem)</span>;
+    <span class="property">margin</span>: <span class="value">calc(2 * 10px)</span>;
+    <span class="property">font-size</span>: <span class="value">calc(16px + 0.5vw)</span>;
+    <span class="property">padding</span>: <span class="value">calc((100% - 20px) / 3)</span>;
+}</div>
+            
+            <div class="note">
+                 يمكن استخدام العمليات: +, -, *, / مع أي وحدات قياس.
+            </div>
+        </div>
+
+        <!-- 15. Border and Outline -->
+        <div class="section">
+            <h2>١٥. الحدود والإطار (Border & Outline)</h2>
+            
+            <div class="explanation">
+                الحدود والإطار يضيفان تزيينًا حول العناصر، لكن لهما استخدامات مختلفة.
+            </div>
+            
+            <div class="code-block"><span class="selector">.box</span> {
+    <span class="comment">/* الحدود */</span>
+    <span class="property">border</span>: <span class="value">2px solid red</span>;        <span class="comment">/* عرض نمط لون */</span>
+    <span class="property">border-radius</span>: <span class="value">10px</span>;          <span class="comment">/* زوايا دائرية */</span>
+    <span class="property">border-bottom</span>: <span class="value">1px dotted blue</span>; <span class="comment">/* حد سفلي فقط */</span>
+    <span class="property">border-top-right-radius</span>: <span class="value">5px</span>; <span class="comment">/* زاوية محددة */</span>
+    
+    <span class="comment">/* الإطار */</span>
+    <span class="property">outline</span>: <span class="value">2px dashed green</span>;    <span class="comment">/* خارج الحدود */</span>
+    <span class="property">outline-offset</span>: <span class="value">5px</span>;          <span class="comment">/* مسافة بين الحدود والإطار */</span>
+}</div>
+            
+            <div class="note">
+                 الفرق: الإطار خارج الحدود ولا يأخذ مساحة، بينما الحدود جزء من نموذج الصندوق.
+            </div>
+        </div>
+
+        <!-- 16. Box Model -->
+        <div class="section">
+            <h2>١٦. نموذج الصندوق (Box Model)</h2>
+            
+            <div class="explanation">
+                كل عنصر في HTML يعامل كصندوق يتكون من: المحتوى، الحشو، الحدود، والهوامش.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* من الداخل إلى الخارج: */</span>
+المحتوى → الحشو → الحدود → الهوامش
+
+<span class="selector">div</span> {
+    <span class="property">width</span>: <span class="value">200px</span>;           <span class="comment">/* عرض المحتوى */</span>
+    <span class="property">padding</span>: <span class="value">20px</span>;          <span class="comment">/* مساحة داخل الحدود */</span>
+    <span class="property">border</span>: <span class="value">2px solid black</span>;  <span class="comment">/* الحدود حول الحشو */</span>
+    <span class="property">margin</span>: <span class="value">10px</span>;           <span class="comment">/* مساحة خارج الحدود */</span>
+}</div>
+            
+            <div class="note">
+                 العرض الكلي = width + padding + border + margin
+            </div>
+        </div>
+
+        <!-- 17. box-sizing -->
+        <div class="section">
+            <h2>١٧. خاصية box-sizing</h2>
+            
+            <div class="explanation">
+                تتحكم في كيفية حساب أبعاد العنصر - هل تشمل الحشو والحدود أم لا.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* الافتراضي - العرض والارتفاع للمحتوى فقط */</span>
+<span class="property">box-sizing</span>: <span class="value">content-box</span>;
+
+<span class="comment">/* الأفضل - العرض والارتفاع يشملان الحشو والحدود */</span>
+<span class="property">box-sizing</span>: <span class="value">border-box</span>;</div>
+            
+            <div class="note">
+                 النصيحة: استخدم <span style="background: #0a001f; padding: 2px 5px; border-radius: 3px; font-family: monospace;">* { box-sizing: border-box; }</span> في بداية CSS لتسهيل التخطيط.
+            </div>
+        </div>
+
+        <!-- 18. Pseudo-elements -->
+        <div class="section">
+            <h2>١٨. العناصر الزائفة (Pseudo-elements)</h2>
+            
+            <div class="explanation">
+                تسمح بتصميم أجزاء محددة من العنصر أو إضافة محتوى زائف.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* إضافة محتوى قبل العنصر */</span>
+<span class="selector">p::before</span> {
+    <span class="property">content</span>: <span class="value">"→ "</span>;
+    <span class="property">color</span>: <span class="value">red</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+}
+
+<span class="comment">/* إضافة محتوى بعد العنصر */</span>
+<span class="selector">p::after</span> {
+    <span class="property">content</span>: <span class="value">"!"</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">color</span>: <span class="value">blue</span>;
+}
+
+<span class="comment">/* تنسيق السطر الأول */</span>
+<span class="selector">p::first-line</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">color</span>: <span class="value">purple</span>;
+}
+
+<span class="comment">/* تنسيق الحرف الأول */</span>
+<span class="selector">p::first-letter</span> {
+    <span class="property">font-size</span>: <span class="value">2em</span>;
+    <span class="property">color</span>: <span class="value">red</span>;
+    <span class="property">float</span>: <span class="value">right</span>;
+    <span class="property">margin-left</span>: <span class="value">5px</span>;
+}</div>
+        </div>
+
+        <!-- 19. Animation & Keyframes -->
+        <div class="section">
+            <h2>١٩. التحريك والإطارات الرئيسية</h2>
+            
+            <div class="explanation">
+                تسمح بإنشاء حركات وتأثيرات متقدمة على العناصر.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* تعريف التحريك */</span>
+<span class="selector">@keyframes example</span> {
+    <span class="value">0%</span> { 
+        <span class="property">background-color</span>: <span class="value">red</span>; 
+        <span class="property">transform</span>: <span class="value">translateX(0)</span>; 
+    }
+    <span class="value">50%</span> { 
+        <span class="property">background-color</span>: <span class="value">yellow</span>; 
+        <span class="property">transform</span>: <span class="value">translateX(100px)</span>; 
+    }
+    <span class="value">100%</span> { 
+        <span class="property">background-color</span>: <span class="value">green</span>; 
+        <span class="property">transform</span>: <span class="value">translateX(0)</span>; 
+    }
+}
+
+<span class="comment">/* تطبيق التحريك */</span>
+<span class="selector">div</span> {
+    <span class="property">animation</span>: <span class="value">example 3s ease-in-out infinite</span>;
+    
+    <span class="comment">/* أو بشكل مفصل */</span>
+    <span class="property">animation-name</span>: <span class="value">example</span>;
+    <span class="property">animation-duration</span>: <span class="value">3s</span>;
+    <span class="property">animation-timing-function</span>: <span class="value">ease-in-out</span>;
+    <span class="property">animation-iteration-count</span>: <span class="value">infinite</span>;
+    <span class="property">animation-direction</span>: <span class="value">alternate</span>;
+}</div>
+        </div>
+
+        <!-- 20. Transition -->
+        <div class="section">
+            <h2>٢٠. التحولات (Transitions)</h2>
+            
+            <div class="explanation">
+                تجعل التغيرات في الخصائص سلسة ومتحركة بدلاً من أن تكون فورية.
+            </div>
+            
+            <div class="code-block"><span class="selector">.button</span> {
+    <span class="property">background-color</span>: <span class="value">blue</span>;
+    <span class="property">transition</span>: <span class="value">all 0.3s ease-in-out</span>;
+    
+    <span class="comment">/* أو بشكل مفصل */</span>
+    <span class="property">transition-property</span>: <span class="value">all</span>;
+    <span class="property">transition-duration</span>: <span class="value">0.3s</span>;
+    <span class="property">transition-timing-function</span>: <span class="value">ease-in-out</span>;
+    <span class="property">transition-delay</span>: <span class="value">0.1s</span>;
+}
+
+<span class="selector">.button:hover</span> {
+    <span class="property">background-color</span>: <span class="value">red</span>;
+    <span class="property">transform</span>: <span class="value">scale(1.1)</span>;
+}</div>
+            
+            <div class="property-list">
+                <div class="property-item">
+                    <span class="property">linear</span><br>
+                    <span class="comment">/* سرعة ثابتة */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">ease</span><br>
+                    <span class="comment">/* بطيء ثم سريع ثم بطيء */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">ease-in</span><br>
+                    <span class="comment">/* يبدأ ببطء */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">ease-out</span><br>
+                    <span class="comment">/* ينتهي ببطء */</span>
+                </div>
+                <div class="property-item">
+                    <span class="property">ease-in-out</span><br>
+                    <span class="comment">/* يبدأ وينتهي ببطء */</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 21. Font Awesome Icons -->
+        <div class="section">
+            <h2>٢١. أيقونات Font Awesome</h2>
+            
+            <div class="explanation">
+                مكتبة رائعة لإضافة أيقونات جميلة لموقعك بسهولة.
+            </div>
+            
+            <div class="code-block"><span class="comment">&lt;!-- تضمين Font Awesome --&gt;</span>
+<span class="selector">&lt;link</span> <span class="property">rel</span>=<span class="value">"stylesheet"</span> 
+      <span class="property">href</span>=<span class="value">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"</span><span class="selector">&gt;</span>
+
+<span class="comment">&lt;!-- استخدام الأيقونات --&gt;</span>
+<span class="selector">&lt;i</span> <span class="property">class</span>=<span class="value">"fas fa-heart"</span><span class="selector">&gt;&lt;/i&gt;</span>      <span class="comment">&lt;!-- نمط صلب --&gt;</span>
+<span class="selector">&lt;i</span> <span class="property">class</span>=<span class="value">"far fa-heart"</span><span class="selector">&gt;&lt;/i&gt;</span>      <span class="comment">&lt;!-- نمط عادي --&gt;</span>
+<span class="selector">&lt;i</span> <span class="property">class</span>=<span class="value">"fab fa-twitter"</span><span class="selector">&gt;&lt;/i&gt;</span>    <span class="comment">&lt;!-- نمط العلامات --&gt;</span>
+
+<span class="comment">&lt;!-- مع CSS --&gt;</span>
+<span class="selector">.icon</span> {
+    <span class="property">color</span>: <span class="value">#ff6b6b</span>;
+    <span class="property">font-size</span>: <span class="value">24px</span>;
+    <span class="property">margin</span>: <span class="value">0 10px</span>;
+}</div>
+            
+            <div class="note">
+                 يمكنك استكشاف جميع الأيقونات على <a href="https://fontawesome.com/icons" style="color: #8c52ff;">Font Awesome</a>
+            </div>
+        </div>
+
+        <!-- 22. Media Queries -->
+        <div class="section">
+            <h2>٢٢. استعلامات الوسائط (Media Queries)</h2>
+            
+            <div class="explanation">
+                تسمح بتطبيق أنماط مختلفة بناءً على خصائص الجهاز أو المتصفح.
+            </div>
+            
+            <div class="code-block"><span class="comment">/* للشاشات الصغيرة (هواتف) */</span>
+<span class="selector">@media screen and (max-width: 768px)</span> {
+    <span class="selector">body</span> {
+        <span class="property">background</span>: <span class="value">lightblue</span>;
+        <span class="property">font-size</span>: <span class="value">14px</span>;
+    }
+    
+    <span class="selector">.container</span> {
+        <span class="property">padding</span>: <span class="value">10px</span>;
+    }
+}
+
+<span class="comment">/* للطباعة */</span>
+<span class="selector">@media print</span> {
+    <span class="selector">.no-print</span> {
+        <span class="property">display</span>: <span class="value">none</span>;
+    }
+    
+    <span class="selector">body</span> {
+        <span class="property">color</span>: <span class="value">black</span>;
+        <span class="property">background</span>: <span class="value">white</span>;
+    }
+}
+
+<span class="comment">/* نقاط التوقف الشائعة */</span>
+<span class="selector">@media (max-width: 1200px)</span> { <span class="comment">/* أجهزة الكمبيوتر المحمولة */</span> }
+<span class="selector">@media (max-width: 768px)</span> { <span class="comment">/* أجهزة لوحية */</span> }
+<span class="selector">@media (max-width: 480px)</span> { <span class="comment">/* هواتف */</span> }
+
+<span class="comment">/* التوجيه */</span>
+<span class="selector">@media (orientation: landscape)</span> { <span class="comment">/* أفقي */</span> }
+<span class="selector">@media (orientation: portrait)</span> { <span class="comment">/* عمودي */</span> }</div>
+            
+            <div class="note">
+                 استعلامات الوسائط أساسية لإنشاء مواقع متجاوبة تعمل على جميع الأجهزة.
+            </div>
+        </div>
+
+</body>
+</html>
