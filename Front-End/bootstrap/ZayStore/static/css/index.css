@@ -1,0 +1,312 @@
+/* ------------------------------------------------
+   Fonts & Root Variables
+-------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+:root {
+    --main-nav: #222834;
+    --bg-main: #ffffff;
+    --bg-secondary: #efefef;
+    --logo: #5dae71;
+    --text-main: #d6d5eb;
+    --transition: 0.25s ease-in-out;
+}
+
+/* ------------------------------------------------
+   Global Styles
+-------------------------------------------------- */
+body {
+    font-family: "Momo Trust Display", sans-serif;
+    background-color: var(--bg-main);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------
+   Top Bar (Sec1)
+-------------------------------------------------- */
+.nav-sec1 {
+    background-color: var(--main-nav);
+    color: var(--text-main);
+}
+
+.sec1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------------------
+   Main Navigation Bar (Sec2)
+-------------------------------------------------- */
+.nav-sec2 {
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 10vh;
+    border-bottom: 1px solid #ddd;
+}
+
+.name {
+    width: 20%;
+    color: var(--logo);
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navlinks {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navlinks a {
+    color: var(--main-nav);
+    font-size: 1rem;
+    letter-spacing: .5px;
+}
+
+.navlinks a:hover {
+    color: var(--logo);
+    transform: translateY(-2px);
+}
+
+.ico {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------------------
+   Hero Slider Section
+-------------------------------------------------- */
+.slider {
+    width: 100%;
+    height: 75vh;
+    background-color: var(--bg-secondary);
+    overflow-x: visible;
+    overflow-y: hidden;
+    overflow: hidden;
+}
+
+/* Correct Bootstrap-safe layout for carousel items */
+.carousel-item {
+    height: 100%;
+    min-height: 400px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+/* Hide non-active slides properly 
+.carousel-item:not(.active) {
+    display: none !important;
+}
+    */
+
+/* Text area */
+.slider-content {
+    width: 45%;
+    text-align: left;
+}
+
+.slider-content h3 {
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.slider-content p {
+    font-family: "Momo Trust Display", sans-serif;
+    width: 90%;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Image area */
+.slider-img {
+    width: 45%;
+}
+
+.slider-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-indicators button {
+    background-color: #bbb;
+}
+
+.carousel-indicators .active {
+    background-color: var(--logo);
+}
+
+/* ------------------------------------------------
+   Categories Section
+-------------------------------------------------- */
+.cat {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.cats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cats .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.cats .category img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--logo);
+    transition: var(--transition);
+}
+
+.cats .category:hover img {
+    transform: scale(1.08);
+    border-color: var(--main-nav);
+}
+
+.cats .category h5 {
+    margin-top: 1rem;
+    color: var(--main-nav);
+    font-size: 1.2rem;
+}
+
+/* FEATURED PRODUCTS */
+.featured .prod-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.featured .prod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--main-nav);
+    color: #ddd;
+    padding: 3rem 0;
+}
+
+.footer h4 { color: var(--logo); margin-bottom: 1rem; }
+
+.footer p { margin: .3rem 0; }
+
+
+.footer .social i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.footer .social i:hover {
+    color: var(--logo);
+    transform: translateY(-3px);
+}
+
+.footer input {
+    border-radius: 0;
+}
+
+.footer .btn {
+    border-radius: 0;
+    background: var(--logo);
+    border: none;
+}
+
+.footer .btn:hover {
+    background: #3c8f57;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .slider-item { flex-direction: column; text-align: center; }
+    .slider-img { width: 70%; }
+}
+
+/* ------------------------------------------------
+   Responsive Adjustments
+-------------------------------------------------- */
+@media (max-width: 992px) {
+    .carousel-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .slider-content {
+        width: 100%;
+    }
+
+    .slider-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-img img {
+        width: 70%;
+    }
+
+    .navlinks {
+        display: none;
+    }
+
+    .ico {
+        width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider {
+        height: 60vh;
+    }
+
+    .slider-content h3 {
+        font-size: 1.6rem;
+    }
+}
