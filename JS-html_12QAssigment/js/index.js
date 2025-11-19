@@ -9,6 +9,7 @@ let User = [
 let inName = prompt("Enter your name: ");
 let inPassword = Number(prompt("Enter your password")); 
 
+//const checkUser = (name, password) =>
 function checkUser(name, password){
     for(let i = 0; i < User.length; i++){
         if(User[i].name == name && User[i].password == password){
@@ -25,6 +26,7 @@ if(login){
     switch(userinput){
         case "1":
             let withdrawAmount = Number(prompt("Enter amount"));
+            //let withdrawAmount = parseFloat(prompt("Enter amount"));
             if(withdrawAmount > login.balance){
                 alert("Insufficient balance");
                 break;

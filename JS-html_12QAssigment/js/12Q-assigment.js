@@ -34,7 +34,9 @@ console.log("//Q3 - Print first 10 powers of 2");
 
 console.log("10 Number of Powers 2");
 for (let i = 1; i <= 10; i++) {
-  let x = Math.pow(i, 2);
+  //let x = i * i;
+  // let x = Math.pow(i, 2);
+  let x = i ** 2;
   console.log(`_${i} : ${x}`);
 }
 console.log();
@@ -48,6 +50,8 @@ console.log("//Q4 - Find largest number in an array");
 let numQ4 = [3, 4, 6, 2, 1, 7, 9];
 
 let max = Math.max(...numQ4);
+//let max = Math.max.apply(null, numQ4);
+//let max = numQ4.reduce((a, b) => Math.max(a, b));
 console.log(`MAX Number using Math.max: ${max}`);
 
 let largest = 0;
@@ -190,13 +194,15 @@ console.log("Unsorted array:");
 console.log(unsorted);
 
 console.log("Sorted array using sort():");
-console.log([...unsorted].sort((a, b) => a - b)); // JS sort needs a comparator
+console.log([...unsorted].sort((a, b) => a - b)); // ... spread operator
 console.log();
 
 // Manual Selection Sort
 console.log("Manual sort:");
 
-let arr = [...unsorted];
+// let arr = [...unsorted]; // ... spread operator
+// let arr = unsorted.slice();
+let arr = Array.from(unsorted); // Array.from() & unsorted.slice() are the same, ...
 for (let i = 0; i < arr.length; i++) {
   let minIndex = i;
 
