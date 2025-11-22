@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|c:\\users\\night\\documents\\c#\\clinicapp\\clinicapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|solutionrelative:clinicapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|c:\\users\\night\\documents\\c#\\clinicapp\\clinicapp\\models\\clinicmanagmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|solutionrelative:clinicapp\\models\\clinicmanagmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|c:\\users\\night\\documents\\c#\\clinicapp\\clinicapp\\models\\appointmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|solutionrelative:clinicapp\\models\\appointmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|c:\\users\\night\\documents\\c#\\clinicapp\\clinicapp\\models\\doctorclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|solutionrelative:clinicapp\\models\\doctorclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|c:\\users\\night\\documents\\c#\\clinicapp\\clinicapp\\models\\patientclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734756F1-CCAC-47EE-8E7A-BD913DC4E947}|ClinicApp\\ClinicApp.csproj|solutionrelative:clinicapp\\models\\patientclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClinicManagmentClass.cs",
+              "DocumentMoniker": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\ClinicManagmentClass.cs",
+              "RelativeDocumentMoniker": "ClinicApp\\Models\\ClinicManagmentClass.cs",
+              "ToolTip": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\ClinicManagmentClass.cs",
+              "RelativeToolTip": "ClinicApp\\Models\\ClinicManagmentClass.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAH4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:12:15.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Program.cs",
+              "RelativeDocumentMoniker": "ClinicApp\\Program.cs",
+              "ToolTip": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Program.cs",
+              "RelativeToolTip": "ClinicApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T06:57:23.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentClass.cs",
+              "DocumentMoniker": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\AppointmentClass.cs",
+              "RelativeDocumentMoniker": "ClinicApp\\Models\\AppointmentClass.cs",
+              "ToolTip": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\AppointmentClass.cs",
+              "RelativeToolTip": "ClinicApp\\Models\\AppointmentClass.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:05:01.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DoctorClass.cs",
+              "DocumentMoniker": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\DoctorClass.cs",
+              "RelativeDocumentMoniker": "ClinicApp\\Models\\DoctorClass.cs",
+              "ToolTip": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\DoctorClass.cs",
+              "RelativeToolTip": "ClinicApp\\Models\\DoctorClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:02:07.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PatientClass.cs",
+              "DocumentMoniker": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\PatientClass.cs",
+              "RelativeDocumentMoniker": "ClinicApp\\Models\\PatientClass.cs",
+              "ToolTip": "C:\\Users\\NIGHT\\Documents\\C#\\ClinicApp\\ClinicApp\\Models\\PatientClass.cs",
+              "RelativeToolTip": "ClinicApp\\Models\\PatientClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T06:59:20.344Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
