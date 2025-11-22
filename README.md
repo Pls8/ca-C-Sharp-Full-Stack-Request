@@ -2,24 +2,31 @@
 ## File structure
 ```
 .
-└── ca-C-Sharp-Full-Stack-Request/
-    ├── 12Q Assigment/
-    │   ├── Program_12Q.cs 
+├── ca-C-Sharp-Full-Stack-Request
+└── -/
+    ├── 12Q Assigment | Program_12Q.cs /
     │   └── -
     ├── 8Q Assigment/
-    │   ├── 8_Q.cs (all in one file)
-    │   ├── Q1 ~ Q8 (Separate files)
+    │   ├── 8_Q.cs (all in one file) | Q1 ~ Q8 (Separate files)
     │   └── -
     ├── C sharp senario/
     │   ├── Ftiness club(not a fork)
-    │   ├── Oman Clinic Appointment System (Diagram)
+    │   ├── ClinincApp&Diagram
+    │   └── -
+    ├── Front-End/
+    │   ├── ZayStore|bootstrap|css_cheatcheet|portfolio
+    │   └── 
+    ├── Grouop Assigments 26-Oct/
+    │   ├── Project 1,2,3,4
+    │   └── -
+    ├── JS-html_12QAssigment/
     │   └── -
     ├── LeetCode/
     │   ├── Program.cs (roman to integer)
     │   └── -
-    ├── Grouop Assigments 26-Oct/
+    ├── Group Assigment 4Q _26-10-2020/
     │   ├── Program.cs (call)
-    │   ├── project(1, 2, 3, 4)
+    │   ├── Models: project_1|project_2
     │   └── -
     ├── OOP-2 Assignment/
     │   ├── Program.cs (call)
