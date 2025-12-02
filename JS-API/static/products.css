@@ -1,0 +1,151 @@
+/* Custom styles for Products API with dark theme */
+body {
+    background-color: #00030e !important;
+    color: #ffffff !important;
+    min-height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #0a0e1a !important;
+    border-bottom: 1px solid #1a1f35;
+}
+
+/* Product cards styling */
+.product-card {
+    background-color: #0a0e1a !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+}
+
+.card-title {
+    color: #ffffff !important;
+}
+
+.card-text {
+    color: #b0b0b0 !important;
+}
+
+/* Card hover effects */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 179, 255, 0.15) !important;
+    border-color: #00b3ff !important;
+}
+
+/* Card image background */
+.card-img-wrapper {
+    background-color: #00030e !important;
+    border-bottom: 1px solid #1a1f35 !important;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, #00b3ff 0%, #0066cc 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0099e6 0%, #0055aa 100%) !important;
+    transform: translateY(-2px);
+}
+
+/* Badge styling */
+.badge.bg-info {
+    background-color: #00b3ff !important;
+    color: #00030e !important;
+}
+
+/* Footer styling */
+footer {
+    background-color: #0a0e1a !important;
+    border-top: 1px solid #1a1f35;
+}
+
+/* Text color adjustments */
+.text-primary {
+    color: #00b3ff !important;
+}
+
+.text-muted {
+    color: #8a8a8a !important;
+}
+
+/* Alert boxes */
+.alert {
+    background-color: #0a0e1a !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+/* Form controls */
+.form-control {
+    background-color: #0a0e1a !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.form-control:focus {
+    border-color: #00b3ff !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 179, 255, 0.25) !important;
+}
+
+/* Hero section */
+.bg-light {
+    background-color: #0a0e1a !important;
+    color: #ffffff !important;
+}
+
+/* Social icons */
+.social-icons a {
+    color: #ffffff !important;
+}
+
+.social-icons a:hover {
+    color: #00b3ff !important;
+}
+
+/* Rating stars */
+.text-warning {
+    color: #ffcc00 !important;
+}
+
+/* Spinner */
+.spinner-border.text-primary {
+    color: #00b3ff !important;
+}
+
+/* Links */
+a {
+    color: #00b3ff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0099e6 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .product-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Smooth transitions */
+.product-card,
+.btn,
+.badge {
+    transition: all 0.3s ease;
+}
+
+/* Container background */
+.container {
+    background-color: transparent;
+}

@@ -1,0 +1,261 @@
+/* Custom GitHub Explorer Styles with dark theme */
+body {
+    background-color: #00030e !important;
+    color: #ffffff !important;
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #0a0e1a !important;
+    border-bottom: 1px solid #1a1f35;
+}
+
+/* Cards styling */
+.card {
+    background-color: #0a0e1a !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.card-header {
+    background-color: #00030e !important;
+    border-bottom: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+/* Profile card specific */
+.profile-card {
+    background: linear-gradient(145deg, #0a0e1a 0%, #00030e 100%) !important;
+}
+
+.profile-card .card-header {
+    background: linear-gradient(135deg, #00b3ff 0%, #0066cc 100%) !important;
+    border: none !important;
+}
+
+/* Stats cards */
+.stats-card {
+    background: linear-gradient(145deg, #00030e 0%, #0a0e1a 100%) !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 179, 255, 0.2) !important;
+    border-color: #00b3ff !important;
+}
+
+/* Follower cards */
+.follower-card {
+    background-color: #00030e !important;
+    border: 1px solid #1a1f35 !important;
+}
+
+.follower-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 179, 255, 0.15) !important;
+    border-color: #00b3ff !important;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, #00b3ff 0%, #0066cc 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0099e6 0%, #0055aa 100%) !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: #00030e !important;
+}
+
+.btn-outline-primary {
+    border-color: #00b3ff !important;
+    color: #00b3ff !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #00b3ff !important;
+    color: #00030e !important;
+}
+
+.btn-dark {
+    background-color: #0a0e1a !important;
+    border-color: #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.btn-dark:hover {
+    background-color: #00b3ff !important;
+    border-color: #00b3ff !important;
+    color: #00030e !important;
+}
+
+/* Text colors */
+.text-primary {
+    color: #00b3ff !important;
+}
+
+.text-success {
+    color: #00ff88 !important;
+}
+
+.text-info {
+    color: #00b3ff !important;
+}
+
+.text-warning {
+    color: #ffcc00 !important;
+}
+
+.text-danger {
+    color: #ff4757 !important;
+}
+
+.text-muted {
+    color: #8a8a8a !important;
+}
+
+/* Badge styling */
+.badge {
+    border-radius: 20px !important;
+    font-weight: 500 !important;
+}
+
+.bg-light {
+    background-color: #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.bg-info {
+    background-color: #00b3ff !important;
+    color: #00030e !important;
+}
+
+.bg-primary {
+    background-color: #0066cc !important;
+    color: #ffffff !important;
+}
+
+.bg-secondary {
+    background-color: #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+/* Alert styling */
+.alert {
+    background-color: #0a0e1a !important;
+    border: 1px solid #1a1f35 !important;
+    color: #ffffff !important;
+}
+
+.alert-info {
+    border-color: #00b3ff !important;
+    background-color: rgba(0, 179, 255, 0.1) !important;
+}
+
+.alert-danger {
+    border-color: #ff4757 !important;
+    background-color: rgba(255, 71, 87, 0.1) !important;
+}
+
+/* Images */
+.img-fluid {
+    border: 3px solid #00b3ff !important;
+    box-shadow: 0 5px 15px rgba(0, 179, 255, 0.3) !important;
+}
+
+/* Loading spinner */
+.spinner-border.text-primary {
+    color: #00b3ff !important;
+}
+
+/* Links */
+a {
+    color: #00b3ff !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #0099e6 !important;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #00030e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00b3ff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0099e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stats-card {
+        margin-bottom: 1rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem !important;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Transitions */
+.card, .btn, .badge {
+    transition: all 0.3s ease !important;
+}
+
+/* GitHub icon color */
+.fa-github {
+    color: #ffffff !important;
+}
+
+/* Section headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+p {
+    color: #b0b0b0 !important;
+}
