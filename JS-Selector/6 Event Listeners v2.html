@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners - النقر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #000311, #030d22, #00123f, #0f1522, #000311);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        
+        .container {
+            background: rgba(0, 3, 17, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .subtitle {
+            color: #64b5f6;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .event-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #64b5f6;
+            backdrop-filter: blur(10px);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .event-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-title i {
+            margin-left: 10px;
+            color: #64b5f6;
+        }
+        
+        .event-desc {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .code-example {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-right: 4px solid #64b5f6;
+            direction: ltr;
+            color: #e0e0e0;
+            overflow-x: auto;
+        }
+        
+        .demo-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #64b5f6, #1976d2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+        }
+        
+        .demo-input {
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            width: 70%;
+            font-size: 1rem;
+            margin: 10px;
+            transition: border-color 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .demo-input:focus {
+            border-color: #64b5f6;
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .demo-input::placeholder {
+            color: #aaaaaa;
+        }
+        
+        .demo-box {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #64b5f6, #1976d2);
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+        }
+        
+        .counter {
+            font-size: 2rem;
+            color: #64b5f6;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 0 2px 10px rgba(100, 181, 246, 0.5);
+        }
+        
+        .submit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+        
+        .form-label {
+            margin-bottom: 8px;
+            color: #cccccc;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        .result-message {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #64b5f6;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Event Listeners في JavaScript</h1>
+        </header>
+        
+        <div class="events-container">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 1. حدث النقر (click)</h2>
+                <p class="event-desc">يتم تنشيط هذا الحدث عند النقر على عنصر. وهو الأكثر استخدامًا للأزرار والروابط.</p>
+                
+                <div class="code-example">
+// اختيار العنصر<br>
+const button = document.getElementById('myButton');<br>
+<br>
+// إضافة مستمع الحدث<br>
+button.addEventListener('click', function() {<br>
+&nbsp;&nbsp;alert('تم النقر على الزر!');<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <p>جرب النقر على الزر:</p>
+                    <button class="demo-button" id="clickDemo">انقر هنا</button>
+                    <p id="clickResult"></p>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 2. حدث الإدخال (input)</h2>
+                <p class="event-desc">يتم تنشيطه عند إدخال نص في حقل إدخال. يعمل مع كل ضغطة زر.</p>
+                
+                <div class="code-example">
+const input = document.getElementById('myInput');<br>
+<br>
+input.addEventListener('input', function(event) {<br>
+&nbsp;&nbsp;console.log('القيمة المدخلة:', event.target.value);<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <p>اكتب شيئًا في الحقل:</p>
+                    <input type="text" class="demo-input" id="inputDemo" placeholder="اكتب هنا...">
+                    <p id="inputResult">سيظهر النص هنا</p>
+                </div>
+            </div>
+            
+            <!-- Event 3 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 3. حدث التحميل (load)</h2>
+                <p class="event-desc">يتم تنشيطه عند انتهاء تحميل الصفحة أو عنصر معين مثل الصور.</p>
+                
+                <div class="code-example">
+// عند تحميل الصفحة<br>
+window.addEventListener('load', function() {<br>
+&nbsp;&nbsp;console.log('تم تحميل الصفحة بالكامل');<br>
+});<br>
+<br>
+// عند تحميل صورة<br>
+image.addEventListener('load', function() {<br>
+&nbsp;&nbsp;console.log('تم تحميل الصورة');<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <p id="loadResult">جاري التحقق من تحميل الصفحة...</p>
+                </div>
+            </div>
+            
+            <!-- Event 4 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 4. حدث تمرير الفأرة (mouseover)</h2>
+                <p class="event-desc">يتم تنشيطه عند تمرير مؤشر الفأرة فوق عنصر.</p>
+                
+                <div class="code-example">
+const box = document.getElementById('myBox');<br>
+<br>
+box.addEventListener('mouseover', function() {<br>
+&nbsp;&nbsp;this.style.backgroundColor = 'red';<br>
+});<br>
+<br>
+box.addEventListener('mouseout', function() {<br>
+&nbsp;&nbsp;this.style.backgroundColor = 'blue';<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <p>مرر الفأرة فوق المربع:</p>
+                    <div class="demo-box" id="hoverDemo">مرر </div>
+                </div>
+            </div>
+            
+            <!-- Event 5 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 5. حدث الضغط على مفتاح (keydown)</h2>
+                <p class="event-desc">يتم تنشيطه عند الضغط على أي مفتاح في لوحة المفاتيح.</p>
+                
+                <div class="code-example">
+document.addEventListener('keydown', function(event) {<br>
+&nbsp;&nbsp;if (event.key === 'Enter') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('تم الضغط على Enter');<br>
+&nbsp;&nbsp;}<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <p>اضغط على أي مفتاح:</p>
+                    <p id="keyResult">سيظهر المفتاح المضغوط هنا</p>
+                    <div class="counter" id="keyCounter">0</div>
+                    <p>عدد الضغطات</p>
+                </div>
+            </div>
+            
+            <!-- Event 6 -->
+            <div class="event-card">
+                <h2 class="event-title"><i>✓</i> 6. حدث إرسال النموذج (submit)</h2>
+                <p class="event-desc">يتم تنشيطه عند إرسال نموذج (form). مهم للتحقق من البيانات قبل الإرسال.</p>
+                
+                <div class="code-example">
+const form = document.getElementById('myForm');<br>
+<br>
+form.addEventListener('submit', function(event) {<br>
+&nbsp;&nbsp;event.preventDefault(); // منع إرسال النموذج<br>
+&nbsp;&nbsp;// التحقق من البيانات<br>
+&nbsp;&nbsp;if (validateForm()) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;form.submit(); // إرسال النموذج<br>
+&nbsp;&nbsp;}<br>
+});
+                </div>
+                
+                <div class="demo-area">
+                    <form id="submitDemo" class="submit-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">الاسم:</label>
+                            <input type="text" class="demo-input" id="name" placeholder="أدخل اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">البريد الإلكتروني:</label>
+                            <input type="email" class="demo-input" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                        </div>
+                        <button type="submit" class="demo-button">إرسال النموذج</button>
+                    </form>
+                    <div id="submitResult" class="result-message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event 1: Click
+        document.getElementById('clickDemo').addEventListener('click', function() {
+            document.getElementById('clickResult').textContent = 'تم النقر على الزر!';
+            this.textContent = 'تم النقر!';
+            setTimeout(() => {
+                this.textContent = 'انقر هنا';
+                document.getElementById('clickResult').textContent = '';
+            }, 1500);
+        });
+        
+        // Event 2: Input
+        document.getElementById('inputDemo').addEventListener('input', function(event) {
+            document.getElementById('inputResult').textContent = event.target.value || 'سيظهر النص هنا';
+        });
+        
+        // Event 3: Load
+        window.addEventListener('load', function() {
+            document.getElementById('loadResult').textContent = 'تم تحميل الصفحة بنجاح!';
+            document.getElementById('loadResult').style.color = '#64b5f6';
+        });
+        
+        // Event 4: Mouseover and Mouseout
+        const hoverDemo = document.getElementById('hoverDemo');
+        hoverDemo.addEventListener('mouseover', function() {
+            this.style.background = 'linear-gradient(135deg, #ff6b6b, #c62828)';
+            this.textContent = 'تم!';
+        });
+        
+        hoverDemo.addEventListener('mouseout', function() {
+            this.style.background = 'linear-gradient(135deg, #64b5f6, #1976d2)';
+            this.textContent = 'مرر ';
+        });
+        
+        // Event 5: Keydown
+        let keyCount = 0;
+        document.addEventListener('keydown', function(event) {
+            keyCount++;
+            document.getElementById('keyResult').textContent = `تم الضغط على مفتاح: ${event.key}`;
+            document.getElementById('keyCounter').textContent = keyCount;
+        });
+        
+        // Event 6: Submit
+        document.getElementById('submitDemo').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if (name && email) {
+                document.getElementById('submitResult').textContent = `شكراً ${name}! تم استلام بياناتك بنجاح.`;
+                document.getElementById('submitResult').style.color = '#4caf50';
+                
+                // إعادة تعيين النموذج بعد 3 ثوان
+                setTimeout(() => {
+                    this.reset();
+                    document.getElementById('submitResult').textContent = '';
+                }, 3000);
+            } else {
+                document.getElementById('submitResult').textContent = 'يرجى ملء جميع الحقول المطلوبة.';
+                document.getElementById('submitResult').style.color = '#f44336';
+            }
+        });
+    </script>
+</body>
+</html>
